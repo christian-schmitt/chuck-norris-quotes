@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuck Norris Quote</title>
+</head>
+<body>
+    <h1>Random Chuck Norris joke</h1>
+    <p th:text="${joke}"/>
+    <form action="/">
+        <button type="submit">New joke</button>
+    </form>
+</body>
+</html>
