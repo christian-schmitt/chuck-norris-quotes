@@ -1,6 +1,6 @@
 package guru.springframework.chucknorrisquotes.controllers;
 
-import guru.springframework.chucknorrisquotes.services.ChuckNorrisJokesService;
+import guru.springframework.chucknorrisquotes.services.JokeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class JokeController {
 
-    private final ChuckNorrisJokesService chuckNorrisJokesService;
+    private final JokeService jokeService;
 
-    public JokeController(ChuckNorrisJokesService chuckNorrisJokesService) {
-        this.chuckNorrisJokesService = chuckNorrisJokesService;
+    public JokeController(JokeService jokeService) {
+        this.jokeService = jokeService;
     }
 
-    @RequestMapping("/")
+    @RequestMapping({"/", ""})
     public String getJoke(Model model) {
-        model.addAttribute("joke", chuckNorrisJokesService.getJoke());
-        return "joke";
+        model.addAttribute("joke", jokeService.getJoke());
+        return "chucknorris";
     }
 }
