@@ -8,6 +8,9 @@
 <body>
     <h1>Random Chuck Norris joke</h1>
     <p th:text="${joke}"/>
+
+    <h2>Another joke directly from the bean</h2>
+    <p th:text="${@chuckNorrisJokesServiceImpl.getJoke()}">Joke</p>
     <form action="/">
         <button type="submit">New joke</button>
     </form>
